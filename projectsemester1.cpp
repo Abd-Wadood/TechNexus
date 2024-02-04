@@ -40,7 +40,7 @@ int main (){
     cout << "BILLING SYSTEM RESTAURANT !!!";
     cout << endl;
 
-    // Map to store menu items and their prices 
+    // Map to store menu items and their prices its syntax is name of the map here its is the menu and with in the type of variable u want to store in this case the string and double is used that is used to store the value of product and its price 
     map<string, double> menu;
 
     //  the menu 
