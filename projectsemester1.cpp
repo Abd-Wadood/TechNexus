@@ -109,10 +109,10 @@ int main (){
 
             // Update the total for the current bill
             total = total + prices[i] * quantities[i]; //the quantities are multiplied by the decleared price and added to gether 
-            GST=0.18 * total;
-            total1=total +GST; // Calculats the GST tax which is 18% and add to the total 
-
+           
         }
+         GST=0.18 * total;
+            total1=total +GST; // Calculats the GST tax which is 18% and add to the total 
 
         // Accumulate the grand total
         grandTotal = grandTotal + total1;
