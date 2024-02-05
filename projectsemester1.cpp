@@ -29,7 +29,21 @@ int main (){
     cout << endl;
     cout << endl;
     cout << endl;
-    cout << "Management System For Resturant !"<< endl;
+    cout<< "Enter if You want to access Billing System || Press 1";
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout<< "abdullah`s logic || Press 2 ";
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout<< "saddiqui`s logic || Press 3";
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout << "Enter Which System You want to Access = ";
+    cin>>a;
+    if (a==1){
     cout << endl;
     cout << endl;
     cout << endl;
@@ -144,7 +158,37 @@ int main (){
     return 0;
 }
 
+if (a==2){
 
+
+
+
+
+
+
+}
+
+if (a==3){
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+}
 
 
 
