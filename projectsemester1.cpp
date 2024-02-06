@@ -1,49 +1,25 @@
 #include <iostream>
 #include <iomanip>
-#include <vector> // used for dymanic memory to print bill beacause the bill my be long and array do not have that mush of memory to store all of it 
+#include <vector> // used for dymanic memory to print bill beacause the bill my be long and array do not have that mush of memory to store all of it or to store the different type of data type
 #include <string>
 #include <map> //it is used to store the menu and its prices if we use if eles it would take very lang and not efficient way to make 
 
 using namespace std;
+string arr1[100], arr2[100], arr3[100], arr4[100], arr5[100], arr6[100], arr7[100];
+int total;
+void billingSystem();
+void abdullahLogic();
+void saddiquiLogic();
+void enter();
+void show();
+void search();
+void update();
+void deleted();
+void interface();
 
-
-
-
-int main (){
-    int a,b,c;
-    cout << endl;
-    cout << endl;
-    cout << " WELCOME TO CROSS PLATFORM MANAGEMAENT SYSTEM !!!! ";
-    cout << endl;
-    cout << endl;
-    cout << endl;
-    cout << endl;
-
-    cout << "============   =========   ==========   ||       ||        || \\      ||   ==========   \\      //  ||        ||  =========\n";
-    cout << "     ||        ||          ||           ||       ||        ||  \\     ||   ||            \\    //   ||        ||  ||\n";
-    cout << "     ||        ||          ||           ||       ||        ||   \\    ||   ||             \\  //    ||        ||  ||\n";
-    cout << "     ||        ||======    ||           ||=======||  ====  ||    \\   ||   ||========      \\//     ||        ||  =========\n";
-    cout << "     ||        ||          ||           ||       ||        ||     \\  ||   ||             // \\     ||        ||          ||\n";
-    cout << "     ||        ||          ||           ||       ||        ||      \\ ||   ||            //   \\    ||        ||          ||\n";
-    cout << "     ||        =========   ==========   ||       ||        ||       \\||   ==========   //     \\     ========    ==========\n";
-    cout << endl;
-    cout << endl;
-    cout << endl;
-    cout<< "Enter if You want to access Billing System || Press 1";
-    cout << endl;
-    cout << endl;
-    cout << endl;
-    cout<< "abdullah`s logic || Press 2 ";
-    cout << endl;
-    cout << endl;
-    cout << endl;
-    cout<< "saddiqui`s logic || Press 3";
-    cout << endl;
-    cout << endl;
-    cout << endl;
-    cout << "Enter Which System You want to Access = ";
-    cin>>a;
-    if (a==1){
+void billingSystem() 
+    // Your billing system code here
+    {
     cout << endl;
     cout << endl;
     cout << endl;
@@ -155,39 +131,252 @@ int main (){
     // Display the grand total at the end
     cout << "----------------------- Total Sale Today: $" << setw(18) << fixed << grandTotal << " -----------------------" << endl;
 
+    
+
+}
+
+void abdullahLogic() {
+    // Abdullah's logic code here
+}
+
+
+
+
+
+
+
+void saddiquiLogic() {
+    // Saddiqui's logic code here
+    interface();
+}
+
+void enter() {
+    int a;
+    cout << "How many students do you want to enter: ";
+    cin >> a;
+    if (total == 0) {
+        total = total + a;
+        for (int i = 0; i < a; i++) {
+            cout << endl;
+            cout << "Enter data of student " << i + 1 << endl;
+            cout << "Enter Student's name: ";
+            cin >> arr1[i];
+            cout << "Enter Student ID: ";
+            cin >> arr2[i];
+            cout << "Enter Student's Department: ";
+            cin >> arr3[i];
+            cout << "Enter Student's Quiz marks: ";
+            cin >> arr4[i];
+            cout << "Enter Student's Assignment Marks: ";
+            cin >> arr5[i];
+            cout << "Enter Student's Mid-term marks: ";
+            cin >> arr6[i];
+            cout << "Enter Student's Final marks: ";
+            cin >> arr7[i];
+        }
+    } else {
+        for (int i = total; i < a; i++) {
+            cout << endl;
+            cout << "Enter data of student " << i + 1 << endl;
+            cout << "Enter Student's name: ";
+            cin >> arr1[i];
+            cout << "Enter Student ID: ";
+            cin >> arr2[i];
+            cout << "Enter Student's Department: ";
+            cin >> arr3[i];
+            cout << "Enter Student's Quiz marks: ";
+            cin >> arr4[i];
+            cout << "Enter Student's Assignment Marks: ";
+            cin >> arr5[i];
+            cout << "Enter Student's Mid-term marks: ";
+            cin >> arr6[i];
+            cout << "Enter Student's Final marks: ";
+            cin >> arr7[i];
+        }
+    }
+}
+
+void show() {
+    for (int i = 0; i < total; i++) {
+        cout << "Data Of Student " << i + 1 << endl << endl;
+        cout << "Student's Name: " << arr1[i] << endl;
+        cout << "Student's ID: " << arr2[i] << endl;
+        cout << "Student's Department: " << arr3[i] << endl;
+        cout << "Student's Quiz Marks: " << arr4[i] << endl;
+        cout << "Student's Assignment Marks: " << arr5[i] << endl;
+        cout << "Student's Mid-term Marks: " << arr5[i] << endl;
+        cout << "Student's Final-term Marks: " << arr6[i] << endl;
+    }
+}
+
+void search() {
+    string b;
+    cout << "Enter Student's ID: ";
+    cin >> b;
+    for (int i = 0; i < total; i++) {
+        if (b == arr2[i]) {
+            cout << "Student's Name: " << arr1[i] << endl;
+            cout << "Student's ID: " << arr2[i] << endl;
+            cout << "Student's Department: " << arr3[i] << endl;
+            cout << "Student's Quiz Marks: " << arr4[i] << endl;
+            cout << "Student's Assignment Marks: " << arr5[i] << endl;
+            cout << "Student's Mid-term Marks: " << arr5[i] << endl;
+            cout << "Student's Final-term Marks: " << arr6[i] << endl;
+        } else {
+            cout << "Student Does not exist!\n";
+        }
+    }
+}
+
+void update() {
+    string b;
+    cout << "Enter Student's ID: ";
+    cin >> b;
+    for (int i = 0; i < total; i++) {
+        if (b == arr2[i]) {
+            cout << "Previous Data: " << endl << endl;
+            cout << "Student's Name: " << arr1[i] << endl;
+            cout << "Student's ID: " << arr2[i] << endl;
+            cout << "Student's Department: " << arr3[i] << endl;
+            cout << "Student's Quiz Marks: " << arr4[i] << endl;
+            cout << "Student's Assignment Marks: " << arr5[i] << endl;
+            cout << "Student's Mid-term Marks: " << arr5[i] << endl;
+            cout << "Student's Final-term Marks: " << arr6[i] << endl;
+            cout << endl;
+            cout << "Enter New Data: " << endl;
+            cout << "Enter Student's name: ";
+            cin >> arr1[i];
+            cout << "Enter Student ID: ";
+            cin >> arr2[i];
+            cout << "Enter Student's Department: ";
+            cin >> arr3[i];
+            cout << "Enter Student's Quiz marks: ";
+            cin >> arr4[i];
+            cout << "Enter Student's Assignment Marks: ";
+            cin >> arr5[i];
+            cout << "Enter Student's Mid-term marks: ";
+            cin >> arr6[i];
+            cout << "Enter Student's Final marks: ";
+            cin >> arr7[i];
+        } else {
+            cout << "Student Does not exist!\n";
+        }
+    }
+}
+
+void deleted() {
+    cout << "Press 1 to Delete Complete Data\n";
+    cout << "Press 2 to Delete Specific Data\n";
+    int c;
+    cin >> c;
+    if (c == 1) {
+        total = 0;
+        cout << "All data is deleted successfully!!\n";
+    } else {
+        string id;
+        cout << "Enter Student ID:\n";
+        cin >> id;
+        for (int i = 0; i < total; i++) {
+            if (id == arr2[i]) {
+                for (int j = i; j < total; j++) {
+                    arr1[j] = arr1[j + 1];
+                    arr2[j] = arr2[j + 1];
+                    arr3[j] = arr3[j + 1];
+                    arr4[j] = arr3[j + 1];
+                    arr5[j] = arr4[j + 1];
+                    arr6[j] = arr6[j + 1];
+                    arr7[j] = arr7[j + 1];
+                }
+                total--;
+                cout << "Your required record is deleted!!\n";
+            }
+        }
+    }
+}
+
+void interface() {
+    int num;
+    while (true) {
+        cout << " __________________________ " << endl;
+        cout << "| Press 1 to 'Enter data'  |" << endl;
+        cout << "| press 2 to 'Show Data'   |" << endl;
+        cout << "| Press 3 to 'Search data' |" << endl;
+        cout << "| Press 4 to 'Update data' |" << endl;
+        cout << "| Press 5 to 'Delete data' |" << endl;
+        cout << "| Press 6 to 'Exit Portal' |" << endl;
+        cout << " __________________________  " << endl;
+        cin >> num;
+        switch (num) {
+            case 1:
+                enter();
+                break;
+            case 2:
+                show();
+                break;
+            case 3:
+                search();
+                break;
+            case 4:
+                update();
+                break;
+            case 5:
+                deleted();
+                break;
+            case 6:
+                exit(0);
+                break;
+            default:
+                cout << "Invalid Input\n";
+                break;
+        }
+    }
+}
+
+
+int main (){
+    int a,b,c;
+    cout << endl;
+    cout << endl;
+    cout << " WELCOME TO CROSS PLATFORM MANAGEMAENT SYSTEM !!!! ";
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout << endl;
+
+    cout << "============   =========   ==========   ||       ||        || \\      ||   ==========   \\      //  ||        ||  =========\n";
+    cout << "     ||        ||          ||           ||       ||        ||  \\     ||   ||            \\    //   ||        ||  ||\n";
+    cout << "     ||        ||          ||           ||       ||        ||   \\    ||   ||             \\  //    ||        ||  ||\n";
+    cout << "     ||        ||======    ||           ||=======||  ====  ||    \\   ||   ||========      \\//     ||        ||  =========\n";
+    cout << "     ||        ||          ||           ||       ||        ||     \\  ||   ||             // \\     ||        ||          ||\n";
+    cout << "     ||        ||          ||           ||       ||        ||      \\ ||   ||            //   \\    ||        ||          ||\n";
+    cout << "     ||        =========   ==========   ||       ||        ||       \\||   ==========   //     \\     ========    ==========\n";
+    cout << endl;
+    cout << endl;
+    cout << endl;
+
+    int choice;
+    cout << "Enter which system you want to access:" << endl;
+    cout << "1. Billing System" << endl;
+    cout << "2. Abdullah's Logic" << endl;
+    cout << "3. Saddiqui's Logic" << endl;
+    cin >> choice;
+
+    switch(choice) {
+        case 1:
+            billingSystem();
+            break;
+        case 2:
+            abdullahLogic();
+            break;
+        case 3:
+            saddiquiLogic();
+            break;
+        default:
+            cout << "Invalid choice" << endl;
+            break;
+    }
+
     return 0;
-}
-
-if (a==2){
-
-
-
-
-
-
-
-}
-
-if (a==3){
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
 }
 
 
