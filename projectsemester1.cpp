@@ -9,7 +9,7 @@ string arr1[100], arr2[100], arr3[100], arr4[100], arr5[100], arr6[100], arr7[10
 int total;
 void billingSystem();
 void abdullahLogic();
-void saddiquiLogic();
+void LMS_System();
 void enter();
 void show();
 void search();
@@ -18,7 +18,7 @@ void deleted();
 void interface();
 
 void billingSystem() 
-    // Your billing system code here
+    // billing system code here
     {
     cout << endl;
     cout << endl;
@@ -145,7 +145,7 @@ void abdullahLogic() {
 
 
 
-void saddiquiLogic() {
+void LMS_System() {
     // Saddiqui's logic code here
     interface();
 }
@@ -358,7 +358,7 @@ int main (){
     cout << "Enter which system you want to access:" << endl;
     cout << "1. Billing System" << endl;
     cout << "2. Abdullah's Logic" << endl;
-    cout << "3. Saddiqui's Logic" << endl;
+    cout << "3. LMS System" << endl;
     cin >> choice;
 
     switch(choice) {
@@ -369,7 +369,7 @@ int main (){
             abdullahLogic();
             break;
         case 3:
-            saddiquiLogic();
+            LMS_System();
             break;
         default:
             cout << "Invalid choice" << endl;
