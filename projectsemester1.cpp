@@ -16,6 +16,11 @@ void search();
 void update();
 void deleted();
 void interface();
+void add(string name[], int price[][2],int size1);
+void changep(string name[], int price[][2]);
+void del(string name[], int price[][2], int size1);
+    string name[8] = {"beef biryani", "chicken biryani", "beef pulao", "chicken pulao", "chicken karahi", "chicken kebab", "roti(1 piece)", "mineral water"};
+
 
 void billingSystem() 
     // billing system code here
@@ -131,17 +136,170 @@ void billingSystem()
     // Display the grand total at the end
     cout << "----------------------- Total Sale Today: $" << setw(18) << fixed << grandTotal << " -----------------------" << endl;
 
-    
-
 }
 
 void abdullahLogic() {
     // Abdullah's logic code here
+    string name[8] = {"beef biryani", "chicken biryani", "beef pulao", "chicken pulao", "chicken karahi", "chicken kebab", "roti(1 piece)", "mineral water"};
+    int size1=8,size2=2;
+    int price[size1][2] = {
+        {300, 600},
+        {250, 500},
+        {300, 600},
+        {250, 500},
+        {400, 800},
+        {350, 700},
+        {15, 0},
+        {60, 120}
+    };
+    cout << "\t\t\t Our current menu  :" << endl;
+    cout << endl;
+    cout << "items:\t\t \thalf\tfull" << endl;
+    cout << endl;
+
+    for (int r = 0; r < 8; r++) {
+        cout << name[r] << "\t\t" << price[r][0] << "\t" << price[r][1] << endl;
+    }
+
+    cout << endl;
+    cout << "Enter the thing you want : ";
+    cout << endl;
+    cout << "Press 1 to change the price of food items : "<<endl;
+    cout << endl;
+    cout << "Press 2 to add more food item : "<<endl;
+    cout << endl;
+    cout << "Press 3 to delete a food item : "<<endl;
+    cout << endl;
+
+    int s;
+    cin >> s;
+    cout << endl;
+
+    switch (s) {
+        case 1:
+           { changep(name, price);
+            break;}
+
+        case 2:
+            {add(name, price,size1);
+            break;}
+
+        case 3:
+       { del( name,  price, size1);
+       break;}
+        default:
+            break;
+    }
+
+   
+}
+
+void changep(string name[], int price[][2]) {
+    while (true) {
+        cout << "Enter the product to change the price (or 'exit' to exit): ";
+        string n;
+        cin.ignore();
+        getline(cin,n);
+
+        if (n == "exit") {
+            break;
+        }
+
+        int index = -1;
+        for (int i = 0; i < 8; i++) {
+            if (n == name[i]) {
+                index = i;
+                break;
+            }
+        }
+
+        if (index != -1) {
+            cout << "Enter new price for " << n << "\nhalf serving = ";
+            cin >> price[index][0];
+            cout << "full serving = ";
+            cin >> price[index][1];
+        } else {
+            cout << "Product not found. Please enter a valid product name." << endl;
+        }
+    }
+
+    cout << "\t\t\t Our updated menu  :" << endl;
+    cout << endl;
+    cout << "items:\t\t \thalf\tfull" << endl;
+    cout << endl;
+
+    for (int r = 0; r < 8; r++) {
+        cout << name[r] << "\t\t" << price[r][0] << "\t" << price[r][1] << endl;
+    }
+
+    cout << endl;
+    cout << "Enter the thing you want : ";
+    cout << endl;
 }
 
 
 
+void add(string name[], int price[][2], int size1) {
+    while (true) {
+        cout << "Enter the name of the item you want to add to the menu or type 'exit': ";
+        cin.ignore();
+        getline(cin, name[size1]);
+        cin.ignore();
 
+        if (name[size1] == "exit") {
+            break;
+        }
+
+        cout << "Enter the price of " << name[size1] << " for half serving: ";
+        cin >> price[size1][0];
+
+        cout << "Enter the price of " << name[size1] << " for full serving: ";
+        cin >> price[size1][1];
+
+        ++size1; // Increment the size of the menu
+    }
+
+    cout << "\t\t\t Our updated menu  :" << endl;
+    cout << endl;
+    cout << "items:\t\t \thalf\tfull" << endl;
+    cout << endl;
+
+    for (int r = 0; r < size1; r++) {
+        cout << name[r] << "\t\t" << price[r][0] << "\t" << price[r][1] << endl;
+    }
+    cout << endl;
+    cout << "Enter the thing you want : ";
+    cout << endl;
+}
+
+
+
+void del(string name[], int price[][2], int size1)
+{
+    while (true) {
+        --size1;
+        string p;
+        cout << "Enter the name of the item you want to delete from the menu(or type 'exit'): ";
+        cin.ignore();
+        getline(cin, p);
+        if (p == "exit") {
+            break;
+        }
+
+        cout << "\t\t\t Our updated menu  :" << endl;
+        cout << endl;
+        cout << "items:\t\t \thalf\tfull" << endl;
+        cout << endl;
+
+        for (int r = 0; r <= size1; r++) {
+            if (name[r] == p) {
+                continue;
+            }
+
+            cout << name[r] << "\t\t" << price[r][0] << "\t" << price[r][1] << endl;
+        }
+    }
+}
 
 
 
