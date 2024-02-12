@@ -8,7 +8,7 @@ using namespace std;
 string arr1[100], arr2[100], arr3[100], arr4[100], arr5[100], arr6[100], arr7[100];
 int total;
 void billingSystem();
-void abdullahLogic();
+void menu_system();
 void LMS_System();
 void enter();
 void show();
@@ -138,7 +138,7 @@ void billingSystem()
 
 }
 
-void abdullahLogic() {
+void menu_system() {
     // Abdullah's logic code here
     string name[8] = {"beef biryani", "chicken biryani", "beef pulao", "chicken pulao", "chicken karahi", "chicken kebab", "roti(1 piece)", "mineral water"};
     int size1=8,size2=2;
@@ -524,7 +524,7 @@ int main (){
             billingSystem();
             break;
         case 2:
-            abdullahLogic();
+            menu_system();
             break;
         case 3:
             LMS_System();
