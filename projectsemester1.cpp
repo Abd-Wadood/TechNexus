@@ -304,11 +304,8 @@ void del(string name[], int price[][2], int size1)
 
 void LMS_System()
 {
-#include<iostream>
-#include<string>
-using namespace std;
-string arr1[100],arr2[100],arr3[100],arr4[100],arr5[100],arr6[100],arr7[100];//these are used to store data of students
-int total;
+	void interface();
+}	
 void enter()
 {
 	int entry;
@@ -503,8 +500,9 @@ void deleted()
 		}
 		
 	}
-}
-int main(){
+}	
+void interface()	
+{
     cout << "\t\t\t\t----------------------------------------" <<endl;
     cout << "\t\t\t\t|         Student Management System    |"<<endl;
     cout << "\t\t\t\t----------------------------------------" <<endl;
@@ -545,7 +543,6 @@ int main(){
 			cout<<"Invalid Input\n";
 			break; 	
 	}
-}
 }
 }
 int main (){
