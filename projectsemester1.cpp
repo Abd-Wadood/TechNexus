@@ -302,7 +302,8 @@ void del(string name[], int price[][2], int size1)
 }
 
 
-
+void LMS_System()
+{
 #include<iostream>
 #include<string>
 using namespace std;
@@ -546,7 +547,7 @@ int main(){
 	}
 }
 }
-
+}
 int main (){
     int a,b,c;
     cout << endl;
