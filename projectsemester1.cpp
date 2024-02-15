@@ -83,21 +83,27 @@ void billingSystem()
 
         double total = 0.0; // Variable to store the total of the current bill
 
-        for (int i = 0; i < numVariables; ++i) { // in this loop the the userwill be asked to enter the products and its name according to the number the user has entered above in numVariable 
+              for (int i = 0; i < numVariables; ++i) {
             cout << "Enter details for item " << i + 1 << ":" << endl;
 
             cout << "Name: ";
-            cin.ignore();  // Clear the input buffer
+            cin.ignore();
             getline(cin, names[i]);
 
             // Check if the entered item is in the menu
             if (menu.find(names[i]) != menu.end()) {
                 // If the item is in the menu, use its price
-                prices[i] = menu[names[i]]; // Array is used to store multiple value in variable like its price product and their name until the i = numVariable
-            } else { // if not found the option is provieded to enter it maually
+                prices[i] = menu[names[i]];
+            } else {
                 cout << "Item not found in the menu. Enter price manually: $";
-                cin >> prices[i]; //here it takes the price if the product is not decleared in the menu
+                cin >> prices[i];
+                if (prices[i] < 0) {
+                    cout << "Invalid price. Please enter a valid price." << endl;
+                    --i; // Go back to the previous iteration to re-enter the price
+                    continue;
+                }
             }
+
 
             cout << "Quantity: ";
             cin >> quantities[i]; //here is the how many quantity of product are entered 
