@@ -308,195 +308,249 @@ void del(string name[], int price[][2], int size1)
 }
 
 
-
-void LMS_System() {
-    // Saddiqui's logic code here
-    interface();
-}
-
-void enter() {
-    int a;
-    cout << "How many students do you want to enter: ";
-    cin >> a;
-    if (total == 0) {
-        total = total + a;
-        for (int i = 0; i < a; i++) {
-            cout << endl;
-            cout << "Enter data of student " << i + 1 << endl;
-            cout << "Enter Student's name: ";
-            cin >> arr1[i];
-            cout << "Enter Student ID: ";
-            cin >> arr2[i];
-            cout << "Enter Student's Department: ";
-            cin >> arr3[i];
-            cout << "Enter Student's Quiz marks: ";
-            cin >> arr4[i];
-            cout << "Enter Student's Assignment Marks: ";
-            cin >> arr5[i];
-            cout << "Enter Student's Mid-term marks: ";
-            cin >> arr6[i];
-            cout << "Enter Student's Final marks: ";
-            cin >> arr7[i];
-        }
-    } else {
-        for (int i = total; i < a; i++) {
-            cout << endl;
-            cout << "Enter data of student " << i + 1 << endl;
-            cout << "Enter Student's name: ";
-            cin >> arr1[i];
-            cout << "Enter Student ID: ";
-            cin >> arr2[i];
-            cout << "Enter Student's Department: ";
-            cin >> arr3[i];
-            cout << "Enter Student's Quiz marks: ";
-            cin >> arr4[i];
-            cout << "Enter Student's Assignment Marks: ";
-            cin >> arr5[i];
-            cout << "Enter Student's Mid-term marks: ";
-            cin >> arr6[i];
-            cout << "Enter Student's Final marks: ";
-            cin >> arr7[i];
-        }
+void LMS_System()
+{
+	void interface();
+}	
+void enter()
+{
+	int entry;
+	cout<<"How many students do you want to enter: ";
+	cin>>entry;
+	if(total==0)
+	{
+	total=total+entry;
+	for(int i=0; i<entry; i++)
+	{
+		cout<<endl;
+	    cout<<"Enter data of student No."<<i+1<<endl<<endl;
+	    cout<<"Enter Student's name: "<<endl;
+	    cin>>arr1[i];
+	    cout<<endl;
+	    cout<<"Enter Student ID: "<<endl;
+	    cin>>arr2[i];
+	    cout<<endl;
+	    cout<<"Enter Student's Department: "<<endl;
+	    cin>>arr3[i];
+	    cout<<endl;
+	    cout<<"Enter Student's Quiz marks: "<<endl;
+	    cin>>arr4[i];
+	    cout<<endl;
+	    cout<<"Enter Student's Assignment Marks: "<<endl;
+	    cin>>arr5[i];
+	    cout<<endl;
+	    cout<<"Enter Student's Mid-term marks: "<<endl;
+	    cin>>arr6[i];
+	    cout<<endl;
+	    cout<<"Enter Student's Final marks: "<<endl;
+	    cin>>arr7[i];
+	    cout<<endl;
+	}
     }
+    else //to insure that the program will not accept data of same person more than 1 time or to prevent from garbage values
+    {
+    	if(entry==total)
+    	{
+    		cout<<"\nStudent alredy exist!\n";
+		}
+	else{
+		
+	for(int i=total; i<entry; i++)
+	{
+		cout<<endl;
+	    cout<<"Enter data of student "<<i+1<<endl<<endl;
+	    cout<<"Enter Student's name: "<<endl;
+	    cin>>arr1[i];
+	    cout<<"\nEnter Student ID: "<<endl;
+	    cin>>arr2[i];
+	    cout<<"\nEnter Student's Department: "<<endl;
+	    cin>>arr3[i];
+	    cout<<"\nEnter Student's Quiz marks: "<<endl;
+	    cin>>arr4[i];
+	    cout<<"\nEnter Student's Assignment Marks: "<<endl;
+	    cin>>arr5[i];
+	    cout<<"\nEnter Student's Mid-term marks: "<<endl;
+	    cin>>arr6[i];
+	    cout<<"\nEnter Student's Final marks: "<<endl;
+	    cin>>arr7[i];
+	    cout<<endl;
+	}
+}
+	}
+		
+}
+void show()
+{
+	for(int i=0; i<total; i++)
+	{
+		cout<<"\nData Of Student "<<i+1<<endl<<endl;
+		cout<<"Student's Name: "<<arr1[i]<<endl;
+		cout<<"Student's ID: "<<arr2[i]<<endl;
+		cout<<"Student's Department: "<<arr3[i]<<endl;
+		cout<<"Student's Quiz Marks: "<<arr4[i]<<endl;
+		cout<<"Student's Assignment Marks: "<<arr5[i]<<endl;
+		cout<<"Student's Mid-term Marks: "<<arr5[i]<<endl;
+		cout<<"Student's Final-term Marks: "<<arr6[i]<<endl;
+	}
+}
+void search()
+{
+	string id;
+	cout<<"Enter Student's ID: "<<endl;
+	cin>>id;
+	for(int i=0; i<total; i++)
+	{
+	if(id==arr2[i])
+	{
+	   for(int i=0; i<total; i++)
+	    {
+		cout<<"Student's Name: "<<arr1[i]<<endl;
+		cout<<"Student's ID: "<<arr2[i]<<endl;
+		cout<<"Student's Department: "<<arr3[i]<<endl;
+		cout<<"Student's Quiz Marks: "<<arr4[i]<<endl;
+		cout<<"Student's Assignment Marks: "<<arr5[i]<<endl;
+		cout<<"Student's Mid-term Marks: "<<arr5[i]<<endl;
+		cout<<"Student's Final-term Marks: "<<arr6[i]<<endl;	
+		}
+	}
+		else	
+		{
+			cout<<"Student Does not exist!\n";
+		}
 }
 
-void show() {
-    for (int i = 0; i < total; i++) {
-        cout << "Data Of Student " << i + 1 << endl << endl;
-        cout << "Student's Name: " << arr1[i] << endl;
-        cout << "Student's ID: " << arr2[i] << endl;
-        cout << "Student's Department: " << arr3[i] << endl;
-        cout << "Student's Quiz Marks: " << arr4[i] << endl;
-        cout << "Student's Assignment Marks: " << arr5[i] << endl;
-        cout << "Student's Mid-term Marks: " << arr5[i] << endl;
-        cout << "Student's Final-term Marks: " << arr6[i] << endl;
-    }
 }
-
-void search() {
-    string b;
-    cout << "Enter Student's ID: ";
-    cin >> b;
-    for (int i = 0; i < total; i++) {
-        if (b == arr2[i]) {
-            cout << "Student's Name: " << arr1[i] << endl;
-            cout << "Student's ID: " << arr2[i] << endl;
-            cout << "Student's Department: " << arr3[i] << endl;
-            cout << "Student's Quiz Marks: " << arr4[i] << endl;
-            cout << "Student's Assignment Marks: " << arr5[i] << endl;
-            cout << "Student's Mid-term Marks: " << arr5[i] << endl;
-            cout << "Student's Final-term Marks: " << arr6[i] << endl;
-        } else {
-            cout << "Student Does not exist!\n";
-        }
-    }
+void update()
+{
+		string id;
+	cout<<"Enter Student's ID: "<<endl;
+	cin>>id;
+	for(int i=0; i<total; i++)
+	{
+		if(id==arr2[i])
+		{
+		cout<<"Previous Data: "<<endl<<endl;
+		cout<<"Student's Name: "<<arr1[i]<<endl;
+		cout<<"Student's ID: "<<arr2[i]<<endl;
+		cout<<"Student's Department: "<<arr3[i]<<endl;
+		cout<<"Student's Quiz Marks: "<<arr4[i]<<endl;
+		cout<<"Student's Assignment Marks: "<<arr5[i]<<endl;
+		cout<<"Student's Mid-term Marks: "<<arr5[i]<<endl;
+		cout<<"Student's Final-term Marks: "<<arr6[i]<<endl;
+		cout<<endl;
+		cout<<"Enter New Data: "<<endl<<endl;
+		cout<<"Enter Student's name: "<<endl;
+	    cin>>arr1[i];
+	    cout<<endl;
+	    cout<<"Enter Student ID: "<<endl;
+	    cin>>arr2[i];
+	    cout<<endl;
+	    cout<<"Enter Student's Department: "<<endl;
+	    cin>>arr3[i];
+	    cout<<endl;
+	    cout<<"Enter Student's Quiz marks: "<<endl;
+	    cin>>arr4[i];
+	    cout<<endl;
+	    cout<<"Enter Student's Assignment Marks: "<<endl;
+	    cin>>arr5[i];
+	    cout<<endl;
+	    cout<<"Enter Student's Mid-term marks: "<<endl;
+	    cin>>arr6[i];
+	    cout<<endl;
+	    cout<<"Enter Student's Final marks: "<<endl;
+	    cin>>arr7[i];
+	    cout<<endl;
+		}
+		else
+		{
+			cout<<"Student Does not exist!\n";
+		}
+	}
+	
 }
-
-void update() {
-    string b;
-    cout << "Enter Student's ID: ";
-    cin >> b;
-    for (int i = 0; i < total; i++) {
-        if (b == arr2[i]) {
-            cout << "Previous Data: " << endl << endl;
-            cout << "Student's Name: " << arr1[i] << endl;
-            cout << "Student's ID: " << arr2[i] << endl;
-            cout << "Student's Department: " << arr3[i] << endl;
-            cout << "Student's Quiz Marks: " << arr4[i] << endl;
-            cout << "Student's Assignment Marks: " << arr5[i] << endl;
-            cout << "Student's Mid-term Marks: " << arr5[i] << endl;
-            cout << "Student's Final-term Marks: " << arr6[i] << endl;
-            cout << endl;
-            cout << "Enter New Data: " << endl;
-            cout << "Enter Student's name: ";
-            cin >> arr1[i];
-            cout << "Enter Student ID: ";
-            cin >> arr2[i];
-            cout << "Enter Student's Department: ";
-            cin >> arr3[i];
-            cout << "Enter Student's Quiz marks: ";
-            cin >> arr4[i];
-            cout << "Enter Student's Assignment Marks: ";
-            cin >> arr5[i];
-            cout << "Enter Student's Mid-term marks: ";
-            cin >> arr6[i];
-            cout << "Enter Student's Final marks: ";
-            cin >> arr7[i];
-        } else {
-            cout << "Student Does not exist!\n";
-        }
-    }
+void deleted()
+{
+	cout<<"Press 1 to Delete Complete Data\n";
+	cout<<"Press 2 to Delete Specific Data\n";
+	int c;
+	cin>>c;
+	if(c==1)
+	{
+		cout<<endl;
+		total=0;
+		cout<<"All data is deleted successfully!!\n";
+	}
+	else
+	{
+		string id;
+		cout<<"Enter Student's ID:\n";
+		cin>>id;
+		for(int i=0; i<total; i++)
+		{
+			if(id==arr2[i])
+			{
+				for(int j=i; j<total; j++)
+				{
+					arr1[j]=arr1[j+1];
+					arr2[j]=arr2[j+1];
+					arr3[j]=arr3[j+1];
+					arr4[j]=arr3[j+1];
+					arr5[j]=arr4[j+1];
+					arr6[j]=arr6[j+1];
+					arr7[j]=arr7[j+1];
+				}
+				cout<<endl;
+				total--;
+				cout<<"Your required record is deleted!!\n";
+			}
+		}
+		
+	}
+}	
+void interface()	
+{
+    cout << "\t\t\t\t----------------------------------------" <<endl;
+    cout << "\t\t\t\t|         Student Management System    |"<<endl;
+    cout << "\t\t\t\t----------------------------------------" <<endl;
+	cout<<endl<<endl<<endl;
+	   int num;
+	   while(true)
+	   {
+	   cout<<"---------------------------- "<<endl;	
+       cout<<"| Press 1 to 'Enter Data'  |"<<endl;
+       cout<<"| press 2 to 'Show Data'   |"<<endl;
+       cout<<"| Press 3 to 'Search Data' |"<<endl;
+       cout<<"| Press 4 to 'Update Data' |"<<endl;
+       cout<<"| Press 5 to 'Delete Data' |"<<endl;
+       cout<<"| Press 6 to 'Exit'        |"<<endl;
+       cout<<"----------------------------"<<endl;
+       cin>>num;
+       switch(num)
+       {
+       case 1:
+            enter();
+            break;
+       case 2:
+	        show();
+			break;
+		case 3:
+		    search();
+			break;
+		case 4:
+		    update();
+			break;
+		case 5:	   		     
+       	 	deleted();
+       	 	break;
+       	case 6:
+		    exit(0);
+			break;
+		default:
+			cout<<"Invalid Input\n";
+			break; 	
+	}
 }
-
-void deleted() {
-    cout << "Press 1 to Delete Complete Data\n";
-    cout << "Press 2 to Delete Specific Data\n";
-    int c;
-    cin >> c;
-    if (c == 1) {
-        total = 0;
-        cout << "All data is deleted successfully!!\n";
-    } else {
-        string id;
-        cout << "Enter Student ID:\n";
-        cin >> id;
-        for (int i = 0; i < total; i++) {
-            if (id == arr2[i]) {
-                for (int j = i; j < total; j++) {
-                    arr1[j] = arr1[j + 1];
-                    arr2[j] = arr2[j + 1];
-                    arr3[j] = arr3[j + 1];
-                    arr4[j] = arr3[j + 1];
-                    arr5[j] = arr4[j + 1];
-                    arr6[j] = arr6[j + 1];
-                    arr7[j] = arr7[j + 1];
-                }
-                total--;
-                cout << "Your required record is deleted!!\n";
-            }
-        }
-    }
 }
-
-void interface() {
-    int num;
-    while (true) {
-        cout << " __________________________ " << endl;
-        cout << "| Press 1 to 'Enter data'  |" << endl;
-        cout << "| press 2 to 'Show Data'   |" << endl;
-        cout << "| Press 3 to 'Search data' |" << endl;
-        cout << "| Press 4 to 'Update data' |" << endl;
-        cout << "| Press 5 to 'Delete data' |" << endl;
-        cout << "| Press 6 to 'Exit Portal' |" << endl;
-        cout << " __________________________  " << endl;
-        cin >> num;
-        switch (num) {
-            case 1:
-                enter();
-                break;
-            case 2:
-                show();
-                break;
-            case 3:
-                search();
-                break;
-            case 4:
-                update();
-                break;
-            case 5:
-                deleted();
-                break;
-            case 6:
-                exit(0);
-                break;
-            default:
-                cout << "Invalid Input\n";
-                break;
-        }
-    }
-}
-
-
 int main (){
     int a,b,c;
     cout << endl;
